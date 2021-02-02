@@ -38,17 +38,32 @@
                         </svg>
                     </button>
                 </form>
-    
-    
+                <!-- Search History -->
+                <ul class="list-group mb-3">
                 
-            </div>
-
+                </ul>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <!-- Display for Current Weather  -->
+                        <div class="col-12 my-2 ml-3 border rounded" id="currentWeatherContainer">
+                            <p class="h3 my-4 city-name" id="cityDateIcon">Where Do You Want to Go?<img id="weatherIcon" src=""></p>
+                            <p>Temperature: <span id="currentTemp"></span></p>
+                            <p>Humitidy: <span id="currentHMD"></span></p>
+                            <p>Wind Speed: <span id="windSpeed"></span></p>
+                            <p class="mb-5">UV Index: <span id="uvIndex"></span></p>
+                        </div>
+                        <!-- Display for 5-day Forecast -->
+                        <div class="col-12">
+                            <p class="h3">5-Day Forecast:</p>
+                            <div class="card-deck">
+                
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                </div>
+                </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script
