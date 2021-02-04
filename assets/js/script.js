@@ -55,6 +55,41 @@ function currentWeather(city) {
         // });
 };
 
+// Function for the 5-day forecast
+function forecast(city) {
+    var apiURLForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=" + forecastApiKey;
+    fetch(apiURLForecast)
+    .then(function(response) {
+        if (response.ok) {
+            response.json().then(function(response) {
+                $(".card-deck").html('');
+                // For loop to loop through and display 5-day forecast
+                for (var i = 5; i < 40; i += 8) {    
+                    var forecastDate = moment(response.list[i].dt_txt).format("M/D/YYYY");
+                    var forecastIcon = response.list[i].weather[0].icon;
+                    var forecastIconURL = "https://openweathermap.org/img/wn/" + forecastIcon + ".png";
+                    var forecastTemp = "TEMP: "+ response.list[i].main.temp + "°F";
+                    var forecastHMD = "HMD: " + response.list[i].main.humidity + "%";
+                    var forecastHTML = '<div class="col-md-6 col-lg-4 col-xl-3 py-2">' +
+                                    '<div class="card text-white bg-primary p-2">' +
+                                    '<p class="card-title h5">' + forecastDate + '</p>' +
+                                    '<p class="card-text"><img id="weatherIcon" src="' + forecastIconURL + '"/></p>' +
+                                    '<p class="card-text">' + forecastTemp + '</p>' +
+                                    '<p class="card-text">' + forecastHMD + '</p>' +
+                                '</div>' +
+                                '</div>';
+                $(".card-deck").append(forecastHTML);
+                }
+            });
+        } else {
+            return;
+        }
+    })
+    .catch(function(error) {
+        return;
+    })
+}
+
 // Event Listeners:
 // Listens for input to be submitted and runs weather functions
 $("#citySearchForm").on("submit", function(event) {
