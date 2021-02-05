@@ -117,3 +117,13 @@ $("#citySearchForm").on("submit", function(event) {
     $("#searchHistory").siblings().removeClass("active");
     $("#cityName").val('');
 });
+
+// Listens for search history list item to be clicked and reruns weather functions
+$(document).on("click", "#searchHistory", function(){
+    var savedCity = $(this).text();
+    // This adds/removes active class so you can see which one was clicked/being displayed
+    $(this).siblings().removeClass("active");
+    $(this).addClass("active");
+    currentWeather(savedCity);
+    forecast(savedCity);
+});
