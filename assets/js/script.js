@@ -90,6 +90,22 @@ function forecast(city) {
     })
 }
 
+// Function to prepend input into list so most recent search is always at the top
+function searchHistory(city) {
+    var api =  "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey;
+    fetch(api).then(function(response) {
+        if (response.ok) {
+            var liHTML = '<li class="list-group-item capitalize" id="searchHistory">' + city + '</li>';
+                        $(".list-group").prepend(liHTML);
+                        savedSearchHistory.unshift(city);
+                        localStorage.setItem("history", JSON.stringify(savedSearchHistory));
+                        // How to handle not saving duplicate cities?
+        } else {
+            return;
+        }
+    });
+};
+
 // Event Listeners:
 // Listens for input to be submitted and runs weather functions
 $("#citySearchForm").on("submit", function(event) {
