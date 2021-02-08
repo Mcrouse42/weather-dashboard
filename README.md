@@ -10,3 +10,6 @@ The online weather dashboard shows you the current weather of the city you searc
 * Bootstrap 
 * Moment.js 
 * jQuery 
+
+## Screenshot:
+
