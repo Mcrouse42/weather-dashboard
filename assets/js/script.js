@@ -106,6 +106,14 @@ function searchHistory(city) {
     });
 };
 
+// Function to load search history when page loads/reloads
+function loadSearchHistory() {
+    for (var i = 0; i < savedSearchHistory.length; i++) {
+        var cityHistoryLiHTML = '<li class="list-group-item capitalize" id="searchHistory">' + savedSearchHistory[i] + '</li>';
+        $(".list-group").append(cityHistoryLiHTML);
+    }
+}
+
 // Event Listeners:
 // Listens for input to be submitted and runs weather functions
 $("#citySearchForm").on("submit", function(event) {
