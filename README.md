@@ -12,7 +12,7 @@ The online weather dashboard shows you the current weather of the city you searc
 * jQuery 
 
 ## Deployed Website:
-(https://mcrouse42.github.io/weather-dashboard/)
+https://mcrouse42.github.io/weather-dashboard/
 
 ## Screenshot:
 
