@@ -13,3 +13,4 @@ The online weather dashboard shows you the current weather of the city you searc
 
 ## Screenshot:
 
+<img src="https://github.com/Mcrouse42/weather-dashboard/blob/develop/assets/images/Screen%20Shot%202021-02-08%20at%203.56.38%20PM%20(2).png" />
