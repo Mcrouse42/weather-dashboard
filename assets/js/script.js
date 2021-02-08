@@ -135,3 +135,6 @@ $(document).on("click", "#searchHistory", function(){
     currentWeather(savedCity);
     forecast(savedCity);
 });
+
+// Load any search history from localStorage
+loadSearchHistory();
