@@ -50,9 +50,9 @@ function currentWeather(city) {
                 alert("Error: " + response.statusText);
             }
         })
-        // .catch(function(error) {
-        //     alert("Unable to connect to Weather Report");
-        // });
+        .catch(function(error) {
+            alert("Unable to connect to Weather Report");
+        });
 };
 
 // Function for the 5-day forecast
